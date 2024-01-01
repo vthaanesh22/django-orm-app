@@ -1,4 +1,6 @@
-# Django ORM Web Application
+# Django ORM Web Application.
+DEVELOPED.BY:V.THAANESH
+REG.NO:212223230228
 
 ## AIM
 To develop a Django application to store and retrieve data from a database using Object Relational Mapping(ORM).
@@ -25,9 +27,11 @@ Create an application in the myfoodblog project with the name “cuisine"
 ### STEP 6:
 Define a cuisine model to handle posts by the owner / users of the blog , edit settings.py:
 ### STEP 7: 
-Add your cuisine model to the administration site. Customizing the way models (eg. Cuisine) are displayed in the admin app and customize the admin model some more.
+Add your cuisine model to the administration site. Customizing the way models (eg. Cuisine)
+are displayed in the admin app and customize the admin model some more.
 
 ## PROGRAM
+
 ### SETTINGS.PY
 ``````
 Django settings for MyFoodBlog project.
@@ -79,10 +83,9 @@ TEMPLATES = [
 ‘django.template.context_processors.debug’,
 ‘django.template.context_processors.request’,
 ‘django.contrib.auth.context_processors.auth’,
-‘django.contrib.messages.context_processors.messages’
+‘django.contrib.messages.context_processors.messages’,
 ],
 },
-MODEL.PY
 },
 ]
 WSGI_APPLICATION = ‘MyFoodBlog.wsgi.application’
@@ -125,53 +128,54 @@ MEDIA_ROOT= os.path.join(BASE_DIR, ‘cuisine/pics’)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = ‘django.db.models.BigAutoField’
 ``````
+
 ### MODEL.PY
 ``````
-from django.db import models
-from django.utils import timezone
-from django.contrib.auth.models import User
-STATUS_CHOICES = (
-(‘draft’, ‘Draft’),
-(‘published’, ‘Published’),
-)
-CATG_CHOICES = (
-(‘dessert’, ‘Dessert’),
-(‘snack’, ‘Snack’),
-(‘food’, ‘Food’),
-)
-class Cuisine(models.Model):
-name = models.CharField(max_length=20)
-type = models.CharField(max_length=8,
-choices=((‘veg’,’Veg’),(‘non veg’,’NV’)),
-default=’non veg’)
-catg = models.CharField(max_length=8,
-choices=CATG_CHOICES,
-default=’food’)
-desc = models.TextField()
-pic = models.ImageField(upload_to=’cuisine_pic’, blank=True, null=True, )
-author = models.ForeignKey(User,
-related_name=’cuisine_user’,
-on_delete=models.CASCADE,)
-publish = models.DateTimeField(default=timezone.now)
-created = models.DateTimeField(auto_now_add=True)
-updated = models.DateTimeField(auto_now=True)
-slug = models.SlugField(max_length=30, unique_for_date=’publish’)
-status = models.CharField(max_length=10,
-choices=STATUS_CHOICES,
-default=’draft’)
-class Meta:
-ordering = (‘-publish’,)
-def __str__(self):
-return self.name
+},
+]
+WSGI_APPLICATION = ‘MyFoodBlog.wsgi.application’
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+DATABASES = {
+‘default’: {
+‘ENGINE’: ‘django.db.backends.sqlite3’,
+‘NAME’: BASE_DIR / ‘db.sqlite3’,
+}
+}
+# Password validation
+# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+AUTH_PASSWORD_VALIDATORS = [
+{
+‘NAME’: ‘django.contrib.auth.password_validation.UserAttributeSimilarityValidator’,
+},
+{
+‘NAME’: ‘django.contrib.auth.password_validation.MinimumLengthValidator’,
+},
+{
+‘NAME’: ‘django.contrib.auth.password_validation.CommonPasswordValidator’,
+},
+{
+‘NAME’: ‘django.contrib.auth.password_validation.NumericPasswordValidator’,
+},
+]
+# Internationalization
+# https://docs.djangoproject.com/en/4.2/topics/i18n/
+LANGUAGE_CODE = ‘en-us’
+TIME_ZONE = ‘UTC’
+USE_I18N = True
+USE_TZ = True
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.2/howto/static-files/
+STATIC_URL = ‘static/’
+MEDIA_URL = ‘/pics/’
+MEDIA_ROOT= os.path.join(BASE_DIR, ‘cuisine/pics’)
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = ‘django.db.models.BigAutoField’
 ``````
-
-
-
 ## OUTPUT
-
-Include the screenshot of your admin page.
-
-
+![Screenshot 2024-01-01 131323](https://github.com/vthaanesh22/django-orm-app/assets/139373686/76daeb67-3a28-4ab3-926f-baef0ca70331)
+![Screenshot 2024-01-01 131426](https://github.com/vthaanesh22/django-orm-app/assets/139373686/2c7ce2a1-611a-4499-890f-ce04a9badedc)
 
 ## RESULT
 Thus the program for creating database using ORM has been created successfully
