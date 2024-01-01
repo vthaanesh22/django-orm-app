@@ -1,5 +1,6 @@
 # Django ORM Web Application.
 DEVELOPED.BY:V.THAANESH
+
 REG.NO:212223230228
 
 ## AIM
@@ -175,6 +176,7 @@ DEFAULT_AUTO_FIELD = ‘django.db.models.BigAutoField’
 ``````
 ## OUTPUT
 ![Screenshot 2024-01-01 131323](https://github.com/vthaanesh22/django-orm-app/assets/139373686/76daeb67-3a28-4ab3-926f-baef0ca70331)
+
 ![Screenshot 2024-01-01 131426](https://github.com/vthaanesh22/django-orm-app/assets/139373686/2c7ce2a1-611a-4499-890f-ce04a9badedc)
 
 ## RESULT
