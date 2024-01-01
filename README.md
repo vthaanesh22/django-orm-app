@@ -175,9 +175,11 @@ MEDIA_ROOT= os.path.join(BASE_DIR, ‘cuisine/pics’)
 DEFAULT_AUTO_FIELD = ‘django.db.models.BigAutoField’
 ``````
 ## OUTPUT
-![Screenshot 2024-01-01 131323](https://github.com/vthaanesh22/django-orm-app/assets/139373686/76daeb67-3a28-4ab3-926f-baef0ca70331)
+![Screenshot 2024-01-01 132720](https://github.com/vthaanesh22/django-orm-app/assets/139373686/c7aeba2f-c2a9-4173-98e3-a759a3ccb4e8)
+![Screenshot 2024-01-01 132853](https://github.com/vthaanesh22/django-orm-app/assets/139373686/b11c39a5-d901-4751-a973-945fdf632c4c)
 
-![Screenshot 2024-01-01 131426](https://github.com/vthaanesh22/django-orm-app/assets/139373686/2c7ce2a1-611a-4499-890f-ce04a9badedc)
+
+
 
 ## RESULT
 Thus the program for creating database using ORM has been created successfully
